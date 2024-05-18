@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoGrader Platform</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="background"></div> <!-- Blurred background -->
+    <div class="container">
+        <div class="header">
+            <div class="user-info">
+                <span>Welcome, {{ user_email }}</span>
+            </div>
+            <form class="logout-button" action="{{ url_for('logout') }}" method="post">
+                <button type="submit">Logout</button>
+            </form>
+        </div>
+        <div class="split-screen">
+            <div class="problem-statement">
+                <h1>Problems</h1>
+                <ul id="pdfList">
+                    {% for pdf in pdf_files %}
+                    <li>
+                        <a href="#" onclick="loadPDF('{{ url_for('static', filename='pdf/' ~ pdf) }}', '{{ pdf }}'); return false;">
+                            {{ pdf }}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+                <h1>Selected Question</h1>
+                <div id="bestScore" style="display:none;"></div>
+                <div id="challengeContent">
+                    <!-- Content from PDF will be displayed here -->
+                </div>
+                
+            </div>
+            <div class="solution-area">
+                <h2>Submit Your Solution</h2>
+                <textarea id="codeEditor"># Initial code will be loaded here</textarea>
+                <div class="file-upload">
+                    <label for="fileInput">Upload .py file:</label>
+                    <input type="file" id="fileInput" accept=".py">
+                </div>
+                <input type="hidden" id="selectedQuestion" name="selectedQuestion">
+                <button onclick="submitSolution();">Submit</button>
+                <div id="result"></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.5.207/pdf.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

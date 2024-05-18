@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Authentication</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* background: url("../images/some_bg1.png") no-repeat center center fixed; */
+            background-size: cover;
+        }
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+        .form-container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            text-align: center;
+            max-width: 300px;
+            width: 100%;
+            height: auto;
+        }
+        .form-container h1 {
+            margin-bottom: 10px;
+            font-size: 24px;
+            color: #333;
+        }
+        .form-container p {
+            margin-bottom: 20px;
+            color: #555;
+            font-size: 14px;
+        }
+        .form-container img {
+            max-width: 100px; /* Adjust size as needed */
+            margin-bottom: 20px;
+        }
+        .buttons-container {
+            display: flex;
+            flex-direction: column;
+        }
+        form {
+            margin: 10px 0; /* Space between forms */
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            border-radius: 5px;
+            border: none;
+            font-size: 16px;
+            color: white;
+            background-color: #4CAF50;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="form-container">
+        <img src="../static/hacker.avif" alt="Auto Grader Image">
+        <h1>Welcome to Auto Grader System</h1>
+        <p>An auto grader system that evaluates your coding solutions in real-time, providing instant feedback and scores.</p>
+        <div class="buttons-container">
+            <form action="/signup">
+                <button type="submit">Sign Up</button>
+            </form>
+            <form action="/login">
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

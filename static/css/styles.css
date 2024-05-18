@@ -1,0 +1,153 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: none;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.container {
+    position: relative;
+    width: 80%;
+    max-width: 1000px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.user-info {
+    font-size: 1rem;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+.logout-button {
+    position: relative;
+}
+
+.logout-button button {
+    text-decoration: none;
+    color: white;
+    background-color: #4CAF50;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.logout-button button:hover {
+    background-color: #45a049;
+}
+
+.split-screen {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.problem-statement, .solution-area {
+    width: 48%;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.problem-statement ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.problem-statement li {
+    margin: 5px 0;
+}
+
+.problem-statement a {
+    text-decoration: none;
+    color: #4CAF50;
+}
+
+.problem-statement a:hover {
+    text-decoration: underline;
+}
+
+#challengeContent canvas {
+    width: 100%;
+    height: auto;
+}
+
+textarea {
+    width: 100%;
+    height: 300px;
+    margin-top: 20px;
+    box-sizing: border-box;
+    background: #fff;
+    color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.file-upload {
+    margin: 20px 0;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#result {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.test-result {
+    margin: 5px 0;
+    padding: 5px;
+    background-color: #e0ffe0; /* Light green background for passed tests */
+}
+
+.test-result[fail] {
+    background-color: #ffe0e0; /* Light red background for failed tests */
+}
+
+.final-score {
+    color: #333;
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 1.2em;
+}
